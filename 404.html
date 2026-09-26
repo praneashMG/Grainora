@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/fav.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <title>404 - Page Not Found | Grainora</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: 'var(--color-accent)',
+                        'accent-light': 'var(--color-accent-light)',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* --- Fresh Juice & Vibrant Green Palette --- */
+        :root, html[data-theme='light'] {
+            color-scheme: light;
+            --color-background: #FFFDF9; /* Creamy warm off-white */
+            --color-primary-text: #3D271D; /* Rich dark chocolate cocoa */
+            --color-secondary-text: #7C6053; /* Warm taupe / milk chocolate */
+            --color-accent: #A0522D; /* Rich Sienna Brown (Primary) */
+            --color-accent-light: #CD853F; /* Warm Peru Wood (Secondary) */
+            --color-border: #F3ECE3; /* Soft crust beige */
+            --color-hover: #FFF5E6; /* Warm vanilla cream hover */
+        }
+        html[data-theme='dark'] {
+            color-scheme: dark;
+            --color-background: #0E0F12; /* Premium dark charcoal grey */
+            --color-primary-text: #F3F4F6; /* Soft light grey / white */
+            --color-secondary-text: #9CA3AF; /* Muted light grey */
+            --color-accent: #CD853F; /* Warm Wood/Peru (Primary Brand Color) */
+            --color-accent-light: #DEB887; /* Burlywood/Light Wood (Secondary Brand Color) */
+            --color-border: #23272E; /* Clean dark grey border */
+            --color-hover: #1A1C20; /* Alternate dark grey for sections */
+        }
+        
+        body {
+            background-color: var(--color-background);
+            color: var(--color-primary-text);
+            font-family: 'Outfit', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+        
+        .text-primary-text { color: var(--color-primary-text); }
+        .text-secondary-text { color: var(--color-secondary-text); }
+        .text-accent { color: var(--color-accent); }
+        .bg-background { background-color: var(--color-background); }
+        .border-border { border-color: var(--color-border); }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700 !important;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(160, 82, 45, 0.35);
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Minimal Header (Logo + Theme/Lang Toggles Only) -->
+    <header class="absolute top-0 left-0 right-0 z-50 p-6 md:p-8">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2.5">
+                <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-7 h-7" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="var(--color-accent)" stroke-width="6" stroke-dasharray="10 5" fill="none" stroke-linejoin="round" stroke-linecap="round" />
+                        <circle cx="50" cy="50" r="10" stroke="var(--color-accent-light)" stroke-width="4" fill="none" />
+                        <path d="M50 25 L35 60 L45 60 L45 75 L55 75 L55 60 L65 60 Z" fill="var(--color-accent-light)" />
+                    </svg>
+                </div>
+                <span class="text-3xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Grainora</span>
+            </a>
+
+            <!-- Toggles -->
+            <div class="flex items-center space-x-2 rtl:space-x-reverse bg-background/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-border shadow-sm">
+                <button id="theme-toggle" class="text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200" title="Toggle Theme">
+                    <svg class="w-5 h-5 light-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="w-5 h-5 dark-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <div class="w-px h-5 bg-border"></div>
+                <button id="lang-icon" class="text-primary-text hover:text-accent p-1.5 rounded-full transition duration-200" title="Toggle RTL/LTR">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 404 Main Content -->
+    <main class="flex-grow flex items-center justify-center relative w-full pt-20">
+        <!-- Background Texture -->
+        <div class="absolute inset-0 z-0 opacity-5 dark:opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23a0522d\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
+            
+            <!-- Graphic Element -->
+            <div class="relative w-48 h-48 md:w-64 md:h-64 mb-8">
+                <!-- Broken Wood / Missing Piece Illustration -->
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-accent drop-shadow-xl animate-pulse" style="animation-duration: 3s;">
+                    <!-- Outer Ring -->
+                    <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="12" stroke-dasharray="20 10" opacity="0.2" />
+                    <!-- Broken Board -->
+                    <path d="M40 80 L80 70 L90 100 L120 85 L160 95 L150 140 L110 130 L95 160 L60 145 Z" fill="currentColor" opacity="0.8" />
+                    <path d="M80 70 L90 100 L120 85" stroke="var(--color-background)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- 404 Text embedded -->
+                    <text x="100" y="115" font-family="'Playfair Display', serif" font-weight="900" font-size="42" fill="var(--color-background)" text-anchor="middle">404</text>
+                </svg>
+            </div>
+
+            <!-- Text Content -->
+            <h1 class="text-primary-text text-5xl md:text-7xl font-bold mb-4 drop-shadow-sm">Off the Grain</h1>
+            <p class="text-secondary-text text-lg md:text-xl max-w-md mx-auto mb-10 leading-relaxed">
+                It looks like this page was sanded down a little too far. The piece you are looking for is no longer in our workshop.
+            </p>
+
+            <!-- Action Button -->
+            <a href="index.html" class="btn-primary px-10 py-4 rounded-xl font-bold text-lg inline-flex items-center gap-3">
+                <i class="fas fa-arrow-left"></i> Return to Workshop
+            </a>
+        </div>
+    </main>
+
+    <!-- SCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+
+            // Theme Switcher
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            const applyTheme = (theme) => {
+                html.setAttribute('data-theme', theme);
+                html.classList.toggle('dark', theme === 'dark');
+                document.querySelectorAll('.light-icon').forEach(i => i.classList.toggle('hidden', theme === 'dark'));
+                document.querySelectorAll('.dark-icon').forEach(i => i.classList.toggle('hidden', theme === 'light'));
+            };
+            
+            themeToggle?.addEventListener('click', () => {
+                const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', next);
+                applyTheme(next);
+            });
+            applyTheme(localStorage.getItem('theme') || 'light');
+
+            // Language RTL toggle
+            const langToggle = document.getElementById('lang-icon');
+            langToggle?.addEventListener('click', () => {
+                const current = localStorage.getItem('language') === 'ar' ? 'en' : 'ar';
+                localStorage.setItem('language', current);
+                html.setAttribute('dir', current === 'ar' ? 'rtl' : 'ltr');
+            });
+            html.setAttribute('dir', localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
+        });
+    </script>
+</body>
+</html>
